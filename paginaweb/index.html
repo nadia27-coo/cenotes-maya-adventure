@@ -1,1029 +1,199 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cenotes Maya Adventure | Tours en Yucatán</title>
-  <meta name="description" content="Tours a cenotes en Yucatán con mototaxi, cuatrimotos y paquetes premium. Vive una experiencia inolvidable.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cenotes Maya Adventure</title>
   <style>
-    :root {
-      --primary: #0f766e;
-      --primary-dark: #0b5f59;
-      --secondary: #ecfdf5;
-      --accent: #d1fae5;
-      --text: #1f2937;
-      --muted: #4b5563;
-      --white: #ffffff;
-      --shadow: 0 10px 25px rgba(0,0,0,0.10);
-      --radius: 18px;
-      --radius-lg: 28px;
-      --gradient: linear-gradient(135deg, #0f766e, #115e59);
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
     }
 
     body {
-      background: #f8fffc;
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background: #f4fbf9;
+      color: #1f2937;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* HEADER */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15, 118, 110, 0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: #0f766e;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
-    .nav-container {
-      width: min(1200px, 92%);
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: 0.5px;
+    header h1 {
+      font-size: 2rem;
     }
 
     nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: center;
+      margin-top: 10px;
     }
 
     nav a {
-      color: var(--white);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #d1fae5;
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(15, 118, 110, 0.60), rgba(15, 118, 110, 0.45)),
-        url("cenote1.jpeg") center/cover no-repeat;
       color: white;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.20));
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(1200px, 92%);
-      margin: auto;
-      padding: 60px 0;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .hero-text span {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 0.9rem;
+      text-decoration: none;
+      margin: 0 10px;
       font-weight: bold;
-      margin-bottom: 18px;
-      backdrop-filter: blur(4px);
     }
 
-    .hero-text h1 {
-      font-size: clamp(2.3rem, 5vw, 4.6rem);
-      line-height: 1.1;
-      margin-bottom: 18px;
-      font-weight: 900;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
     }
 
-    .hero-text p {
-      font-size: 1.08rem;
-      max-width: 650px;
-      margin-bottom: 28px;
-      color: #f3f4f6;
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #0f766e;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
-      border-radius: 12px;
+      background: #0f766e;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
-      transition: 0.3s ease;
-      box-shadow: var(--shadow);
+      margin-top: 10px;
     }
 
-    .btn-primary {
-      background: var(--white);
-      color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #f0fdf4;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255,255,255,0.75);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-3px);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-
-    .hero-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 14px;
-    }
-
-    .hero-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .hero-list li {
-      background: rgba(255,255,255,0.12);
-      padding: 12px 14px;
-      border-radius: 12px;
-      font-size: 0.98rem;
-    }
-
-    .hero-mini {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .mini-box {
-      background: rgba(255,255,255,0.12);
-      padding: 14px;
-      border-radius: 14px;
-      text-align: center;
-    }
-
-    .mini-box strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-
-    /* SECTION GENERAL */
-    section {
-      padding: 80px 0;
-    }
-
-    .container {
-      width: min(1200px, 92%);
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 35px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    /* SERVICES */
-    .services {
-      background: var(--white);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-
-    .service-card {
-      background: #f8fffc;
-      padding: 28px 22px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: 0.3s ease;
-      border: 1px solid #ecfdf5;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-card .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    /* ABOUT */
-    .about {
-      background: var(--secondary);
-    }
-
-    .about-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .about-text h2 {
-      color: var(--primary);
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 18px;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .about-points {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-top: 15px;
-    }
-
-    .about-points li {
-      background: rgba(255,255,255,0.75);
-      padding: 14px 16px;
-      border-radius: 14px;
-      font-weight: 600;
-      color: #14532d;
-    }
-
-    /* GALLERY */
-    .gallery {
-      background: var(--white);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .gallery-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      min-height: 280px;
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-card:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-label {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(0,0,0,0.45);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      backdrop-filter: blur(4px);
-    }
-
-    /* PACKAGES */
-    .packages {
-      background: linear-gradient(to bottom, #f8fffc, #ecfdf5);
-    }
-
-    .package-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-    }
-
-    .package-card {
-      background: var(--white);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: 0.3s ease;
-      border: 1px solid #e5f7ef;
-    }
-
-    .package-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .package-image {
-      position: relative;
-    }
-
-    .package-image img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-
-    .tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--primary);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: bold;
-    }
-
-    .package-content {
-      padding: 24px;
-    }
-
-    .package-content h3 {
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .price {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #065f46;
-      margin-bottom: 14px;
-    }
-
-    .package-content p {
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .features-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin: 18px 0 20px;
-    }
-
-    .features-list li {
-      background: #f0fdf4;
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      color: #14532d;
-      font-weight: 600;
-    }
-
-    /* WHY CHOOSE US */
-    .why {
-      background: var(--white);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .why-card {
-      text-align: center;
-      padding: 24px 18px;
-      background: #f8fffc;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .why-card .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .why-card h3 {
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      background: var(--secondary);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .testimonial {
-      background: var(--white);
-      padding: 24px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .stars {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .testimonial p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .testimonial h4 {
-      color: var(--primary);
-      font-size: 1rem;
-    }
-
-    /* CTA */
-    .cta {
-      background: var(--gradient);
-      color: white;
-    }
-
-    .cta-box {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .cta-box h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 15px;
-    }
-
-    .cta-box p {
-      margin-bottom: 25px;
-      color: #f3f4f6;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: var(--white);
-    }
-
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .contact-card {
-      background: #f8fffc;
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card h3 {
-      color: var(--primary);
-      margin-bottom: 14px;
-      font-size: 1.35rem;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .contact-item {
-      background: #ecfdf5;
-      padding: 14px 16px;
-      border-radius: 14px;
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: #14532d;
-    }
-
-    .contact-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    /* FOOTER */
-    footer {
+    .btn:hover {
       background: #0b5f59;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 450px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #0f766e;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #0f766e;
       color: white;
       text-align: center;
-      padding: 28px 15px;
+      padding: 20px;
+      margin-top: 30px;
     }
 
-    footer p {
-      margin-bottom: 6px;
-    }
-
-    /* WHATSAPP */
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
       background: #25D366;
       color: white;
-      display: grid;
-      place-items: center;
       font-size: 30px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-      z-index: 1200;
-      transition: 0.3s ease;
+      text-decoration: none;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .whatsapp:hover {
-      transform: scale(1.08);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 980px) {
-      .hero-content,
-      .about-wrap,
-      .contact-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 70px 0;
-      }
-
-      .hero-card {
-        max-width: 600px;
-      }
+      background: #1ebe5d;
     }
 
     @media (max-width: 768px) {
-      .nav-container {
-        justify-content: center;
+      .hero h2 {
+        font-size: 1.6rem;
       }
 
-      nav {
-        justify-content: center;
-      }
-
-      .hero-text h1 {
-        font-size: 2.3rem;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .hero-mini {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image img {
-        height: 320px;
+      .gallery img {
+        height: 250px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
-    <div class="nav-container">
-      <div class="logo">Cenotes Maya Adventure</div>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#galeria">Galería</a>
-        <a href="#paquetes">Paquetes</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
+    <h1>Cenotes Maya Adventure</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="packages.html">Paquetes</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <div class="hero-text">
-        <span>🌿 Tours auténticos en Yucatán</span>
-        <h1>Vive la magia de los cenotes con una experiencia premium</h1>
-        <p>
-          Descubre la belleza natural de Yucatán con recorridos cómodos, seguros y llenos de aventura. 
-          Te llevamos a los mejores cenotes con servicio de mototaxi, atención personalizada y opciones de tour para todos los gustos.
-        </p>
-        <div class="hero-buttons">
-          <a href="#paquetes" class="btn btn-primary">Ver paquetes</a>
-          <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20información%20sobre%20los%20tours%20a%20cenotes" target="_blank" class="btn btn-secondary">Reservar por WhatsApp</a>
-        </div>
-      </div>
+  <section class="hero">
+    <h2>Descubre la magia de los cenotes en Yucatán</h2>
+    <p>
+      Vive una experiencia única recorriendo los cenotes más hermosos de la región con nuestros servicios de mototaxi, tours privados y paquetes diseñados para que disfrutes de la naturaleza, la aventura y la cultura local.
+    </p>
+    <a href="packages.html" class="btn">Ver Paquetes</a>
+  </section>
 
-      <div class="hero-card">
-        <h3>✨ ¿Qué incluye la experiencia?</h3>
-        <ul class="hero-list">
-          <li>🚖 Transporte en mototaxi cómodo y seguro</li>
-          <li>🌊 Visita a cenotes increíbles de la región</li>
-          <li>🛟 Opción de chalecos salvavidas</li>
-          <li>👨‍🏫 Guía local en paquete premium</li>
-          <li>🍽️ Comida típica regional en tours seleccionados</li>
-        </ul>
+  <section class="gallery">
+    <img src="cenote1.jpeg" alt="Cenote 1">
+    <img src="cenote3.jpeg" alt="Cenote 2">
+  </section>
 
-        <div class="hero-mini">
-          <div class="mini-box">
-            <strong>+100</strong>
-            visitantes felices
-          </div>
-          <div class="mini-box">
-            <strong>2</strong>
-            paquetes disponibles
-          </div>
-        </div>
-      </div>
+  <section class="info">
+    <div class="card">
+      <h3>Transporte Seguro</h3>
+      <p>Servicio confiable de mototaxi para que disfrutes tu recorrido con comodidad.</p>
+    </div>
+    <div class="card">
+      <h3>Experiencia Local</h3>
+      <p>Conoce la ruta de los cenotes de una manera auténtica y cercana.</p>
+    </div>
+    <div class="card">
+      <h3>Atención Personalizada</h3>
+      <p>Paquetes adaptados a tus necesidades para una experiencia inolvidable.</p>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <p class="section-subtitle">
-        Diseñamos experiencias para que disfrutes tu aventura de forma cómoda, segura y auténtica.
-      </p>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon">🚖</div>
-          <h3>Mototaxi Turístico</h3>
-          <p>Traslado práctico y accesible para recorrer la ruta de los cenotes con comodidad.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🏍️</div>
-          <h3>Recorridos en Cuatrimoto</h3>
-          <p>Vive una experiencia más aventurera explorando caminos y paisajes únicos.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">👨‍🏫</div>
-          <h3>Guía Local</h3>
-          <p>Conoce la historia, cultura y secretos de la región con atención personalizada.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🛟</div>
-          <h3>Seguridad y Comodidad</h3>
-          <p>Opciones con chaleco salvavidas y asistencia durante todo el recorrido.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOSOTROS -->
-  <section class="about" id="nosotros">
-    <div class="container">
-      <div class="about-wrap">
-        <div class="about-image">
-          <img src="cenote2.jpeg" alt="Experiencia en cenotes">
-        </div>
-
-        <div class="about-text">
-          <h2>Una aventura auténtica en el corazón de Yucatán</h2>
-          <p>
-            En <strong>Cenotes Maya Adventure</strong> te ofrecemos mucho más que un traslado: 
-            te brindamos una experiencia completa para descubrir algunos de los cenotes más hermosos de la región.
-          </p>
-          <p>
-            Nuestro objetivo es que vivas un recorrido seguro, divertido y lleno de naturaleza, 
-            combinando la comodidad del transporte local con el encanto de los paisajes y la cultura yucateca.
-          </p>
-
-          <ul class="about-points">
-            <li>✔ Atención cercana y personalizada</li>
-            <li>✔ Ideal para parejas, familias y grupos</li>
-            <li>✔ Opciones accesibles y paquetes premium</li>
-            <li>✔ Experiencia auténtica y memorable</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERÍA -->
-  <section class="gallery" id="galeria">
-    <div class="container">
-      <h2 class="section-title">Galería de Experiencias</h2>
-      <p class="section-subtitle">
-        Descubre algunos de los paisajes y momentos que te esperan durante tu tour.
-      </p>
-
-      <div class="gallery-grid">
-        <div class="gallery-card">
-          <img src="cenote1.jpeg" alt="Cenote natural">
-          <div class="gallery-label">Cenotes cristalinos</div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="cenote2.jpeg" alt="Ruta de aventura">
-          <div class="gallery-label">Rutas inolvidables</div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="cenote3.jpeg" alt="Tour básico">
-          <div class="gallery-label">Experiencia accesible</div>
-        </div>
-
-        <div class="gallery-card">
-          <img src="cenote4.jpeg" alt="Tour premium">
-          <div class="gallery-label">Aventura premium</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAQUETES -->
-  <section class="packages" id="paquetes">
-    <div class="container">
-      <h2 class="section-title">Nuestros Paquetes</h2>
-      <p class="section-subtitle">
-        Elige la opción perfecta para disfrutar la ruta de los cenotes a tu manera.
-      </p>
-
-      <div class="package-grid">
-
-        <!-- BÁSICO -->
-        <div class="package-card">
-          <div class="package-image">
-            <img src="cenote3.jpeg" alt="Paquete Básico">
-            <div class="tag">Más solicitado</div>
-          </div>
-
-          <div class="package-content">
-            <h3>Paquete Básico</h3>
-            <div class="price">$300 MXN</div>
-            <p>
-              Ideal para quienes desean una experiencia práctica, accesible y auténtica.
-            </p>
-
-            <ul class="features-list">
-              <li>✔ Servicio de mototaxi</li>
-              <li>✔ Capacidad de 1 a 4 personas</li>
-              <li>✔ Recorrido cómodo y seguro</li>
-              <li>✔ Entrada a cenotes por separado: $70 a $100 MXN por persona</li>
-              <li>✔ Chaleco salvavidas opcional: $50 MXN por persona</li>
-            </ul>
-
-            <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20información%20del%20Paquete%20Básico" target="_blank" class="btn btn-primary">Reservar paquete básico</a>
-          </div>
-        </div>
-
-        <!-- PREMIUM -->
-        <div class="package-card">
-          <div class="package-image">
-            <img src="cenote4.jpeg" alt="Paquete Premium">
-            <div class="tag">Experiencia completa</div>
-          </div>
-
-          <div class="package-content">
-            <h3>Paquete Premium</h3>
-            <div class="price">$700 MXN por persona</div>
-            <p>
-              Una experiencia diseñada para disfrutar al máximo la aventura sin preocuparte por nada.
-            </p>
-
-            <ul class="features-list">
-              <li>✔ Servicio de mototaxi</li>
-              <li>✔ Guía local</li>
-              <li>✔ Chaleco salvavidas incluido</li>
-              <li>✔ Entrada a 3 cenotes</li>
-              <li>✔ Comida típica regional</li>
-              <li>✘ Bebidas no incluidas</li>
-            </ul>
-
-            <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20información%20del%20Paquete%20Premium" target="_blank" class="btn btn-primary">Reservar paquete premium</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- POR QUÉ ELEGIRNOS -->
-  <section class="why">
-    <div class="container">
-      <h2 class="section-title">¿Por qué elegirnos?</h2>
-      <p class="section-subtitle">
-        Nos enfocamos en brindarte una experiencia cómoda, auténtica y memorable.
-      </p>
-
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="icon">🌿</div>
-          <h3>Experiencia local</h3>
-          <p>Conectamos a nuestros visitantes con la esencia real de Yucatán.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="icon">🛡️</div>
-          <h3>Seguridad</h3>
-          <p>Recorridos pensados para que disfrutes con tranquilidad y confianza.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="icon">💬</div>
-          <h3>Atención rápida</h3>
-          <p>Reservas sencillas y atención directa por WhatsApp.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="icon">📸</div>
-          <h3>Momentos inolvidables</h3>
-          <p>Perfecto para turistas, parejas, amigos y familias aventureras.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section class="testimonials" id="testimonios">
-    <div class="container">
-      <h2 class="section-title">Lo que dicen nuestros visitantes</h2>
-      <p class="section-subtitle">
-        La mejor recomendación siempre viene de quienes ya vivieron la experiencia.
-      </p>
-
-      <div class="testimonial-grid">
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>“Una experiencia increíble. Los cenotes estaban hermosos y el servicio fue muy amable y puntual. Lo volvería a hacer sin duda.”</p>
-          <h4>— María G.</h4>
-        </div>
-
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>“Nos encantó el paquete premium. Muy completo, cómodo y la comida típica estuvo deliciosa. Súper recomendable.”</p>
-          <h4>— Carlos R.</h4>
-        </div>
-
-        <div class="testimonial">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>“Perfecto para turistas. La atención por WhatsApp fue rápida y el recorrido estuvo muy bien organizado.”</p>
-          <h4>— Fernanda L.</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <div class="cta-box">
-        <h2>¿Listo para vivir tu próxima aventura?</h2>
-        <p>
-          Reserva hoy mismo y descubre la magia de los cenotes de Yucatán con una experiencia diseñada para disfrutar al máximo.
-        </p>
-        <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20reservar%20un%20tour%20a%20los%20cenotes" target="_blank" class="btn btn-primary">Reservar ahora</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container">
-      <h2 class="section-title">Contáctanos</h2>
-      <p class="section-subtitle">
-        Estamos listos para ayudarte a elegir el paquete ideal para tu próxima aventura.
-      </p>
-
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <h3>Información de contacto</h3>
-          <div class="contact-item">📍 Tours en Yucatán, México</div>
-          <div class="contact-item">📱 WhatsApp: +52 999 641 0803</div>
-          <div class="contact-item">⏰ Atención rápida por mensaje</div>
-          <p>
-            Escríbenos y te ayudamos con disponibilidad, paquetes y recomendaciones para tu visita.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3>Reserva rápida</h3>
-          <p>
-            Haz clic en el botón y envíanos tu mensaje por WhatsApp. Te responderemos lo antes posible.
-          </p>
-
-          <div class="contact-actions">
-            <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20información%20sobre%20los%20tours%20a%20cenotes" target="_blank" class="btn btn-primary">Solicitar información</a>
-            <a href="https://wa.me/5219996410803?text=Hola,%20quiero%20reservar%20un%20tour%20a%20los%20cenotes" target="_blank" class="btn btn-secondary" style="color:#0f766e; border-color:#0f766e;">Reservar tour</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <p><strong>Cenotes Maya Adventure</strong></p>
-    <p>© 2026 Todos los derechos reservados</p>
-    <p>Tours en Yucatán | Naturaleza, aventura y cultura local</p>
+    <p>© 2026 Cenotes Maya Adventure | Tours y aventuras en Yucatán</p>
   </footer>
 
-  <!-- WHATSAPP -->
-  <a class="whatsapp" href="https://wa.me/5219996410803" target="_blank" aria-label="WhatsApp">💬</a>
+  <a class="whatsapp" href="https://wa.me/5219996410803" target="_blank" title="WhatsApp">📲</a>
 
 </body>
 </html>
