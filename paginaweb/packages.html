@@ -1,203 +1,235 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paquetes - Cenotes Maya Adventure</title>
   <style>
-    :root {
-      color-scheme: light;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #102a43;
-      background: #eef7f5;
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      min-height: 100vh;
-      background: linear-gradient(180deg, #f9fdff 0%, #eef7f5 100%);
+      background: #f4fbf9;
+      color: #1f2937;
     }
 
-    .page {
-      width: min(1200px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 32px 0 64px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #0f766e;
-    }
-
-    .nav-link,
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      color: white;
+    header {
       background: #0f766e;
-      transition: background 0.2s ease;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
-    .nav-link:hover,
-    .btn:hover {
-      background: #115e54;
+    header h1 {
+      font-size: 2rem;
     }
 
-    .intro {
-      margin-top: 28px;
-      padding: 28px 30px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(15,23,42,0.08);
+    nav {
+      margin-top: 10px;
     }
 
-    .intro h1 {
-      font-size: clamp(2rem, 3vw, 3rem);
-      margin-bottom: 18px;
-      color: #0f766e;
-    }
-
-    .intro p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #334155;
-    }
-
-    .paquetes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-top: 32px;
-    }
-
-    .paquete {
-      background: white;
-      border-radius: 28px;
-      border: 1px solid rgba(15, 118, 110, 0.12);
-      padding: 28px;
-      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
-    }
-
-    .paquete h3 {
-      color: #0f766e;
-      margin-bottom: 16px;
-      font-size: 1.35rem;
-    }
-
-    .paquete p,
-    .paquete li {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 16px;
-    }
-
-    .paquete ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    .highlight {
-      font-weight: 700;
-      color: #064e3b;
-    }
-
-    .whatsapp-button {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #25d366;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+    nav a {
       color: white;
       text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #0f766e;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .package-card {
+      background: white;
+      width: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+
+    .package-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 20px;
+    }
+
+    .package-content h3 {
+      color: #0f766e;
+      margin-bottom: 10px;
       font-size: 1.5rem;
-      box-shadow: 0 18px 40px rgba(15, 118, 110, 0.22);
     }
 
-    .whatsapp-button:hover {
-      transform: translateY(-2px);
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 15px;
     }
 
-    @media (max-width: 760px) {
-      .topbar,
-      .intro,
-      .paquete {
-        padding: 20px;
+    .package-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .package-content ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .package-content li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0f766e;
+      color: white;
+      padding: 10px 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #0b5f59;
+    }
+
+    footer {
+      background: #0f766e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      font-size: 30px;
+      text-decoration: none;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp:hover {
+      background: #1ebe5d;
+    }
+
+    @media (max-width: 768px) {
+      .packages {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .paquetes {
-        grid-template-columns: 1fr;
+      .package-card {
+        width: 90%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div class="brand">Cenotes Maya Adventure</div>
-      <a href="index.html" class="nav-link">Volver a inicio</a>
-    </header>
 
-    <section class="intro">
-      <h1>Paquetes diseñados para tu aventura en los cenotes</h1>
-      <p>Elige entre nuestras opciones de transporte y experiencia. Reservar es muy fácil: selecciona un paquete y contáctanos directamente por WhatsApp para asegurar tu lugar.</p>
-    </section>
+  <header>
+    <h1>Cenotes Maya Adventure</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="packages.html">Paquetes</a>
+    </nav>
+  </header>
 
-    <div class="paquetes">
-      <div class="paquete">
-        <h3>Paquete Básico – $300 MXN</h3>
-        <p>Disfruta de una experiencia cómoda, accesible y auténtica con nuestro servicio de mototaxi, ideal para recorrer la ruta hacia los cenotes de una forma práctica y tradicional.</p>
-        <p>Este paquete incluye únicamente el traslado en mototaxi, con capacidad para <span class="highlight">1 a 4 personas</span>, perfecto para compartir la aventura con amigos o familia.</p>
-        <p>La entrada a los cenotes se paga por separado, con costos aproximados de <span class="highlight">$70 a $100 MXN</span> por persona, dependiendo del cenote que decidas visitar.</p>
-        <p>Para brindarte mayor seguridad y comodidad durante el recorrido, también contamos con renta de chalecos salvavidas por <span class="highlight">$50 MXN</span> por persona.</p>
-        <p>Una excelente opción para quienes desean disfrutar de los cenotes a su propio ritmo, con libertad y al mejor precio.</p>
-        <a href="https://wa.me/5219996410803" target="_blank" class="btn">Reservar por WhatsApp</a>
-      </div>
+  <section class="section">
+    <h2>Nuestros Paquetes</h2>
+    <p>Elige la opción ideal para vivir una aventura inolvidable entre los cenotes de Yucatán.</p>
+  </section>
 
-      <div class="paquete">
-        <h3>Paquete Premium – $700 MXN por persona</h3>
-        <p>Vive una experiencia completa e inolvidable explorando los cenotes con nuestro Paquete Premium, diseñado para que disfrutes al máximo de la aventura, la naturaleza y la cultura local.</p>
-        <p>Este paquete incluye:</p>
+  <section class="packages">
+
+    <div class="package-card">
+      <img src="cenote1.jpeg" alt="Paquete Básico">
+      <div class="package-content">
+        <h3>Paquete Básico</h3>
+        <div class="price">$300 MXN</div>
+        <p>
+          Disfruta de una experiencia cómoda y accesible con nuestro servicio de mototaxi, ideal para recorrer la ruta hacia los cenotes de manera práctica y auténtica.
+        </p>
         <ul>
-          <li>Servicio de mototaxi durante el recorrido</li>
-          <li>Guía local que te acompañará y compartirá información sobre la zona</li>
-          <li>Chaleco salvavidas para mayor seguridad</li>
-          <li>Entrada a 3 cenotes seleccionados</li>
-          <li>Comida típica regional</li>
+          <li>Servicio de mototaxi</li>
+          <li>Capacidad de 1 a 4 personas por unidad</li>
+          <li>Los cenotes se pagan por separado</li>
+          <li>Entrada aproximada: $70 a $100 MXN por persona</li>
+          <li>Renta de chaleco salvavidas: $50 MXN por persona</li>
         </ul>
-        <p>⚠️ Importante: Las bebidas no están incluidas en este paquete.</p>
-        <p>🌿 Ideal para quienes buscan una experiencia más completa, cómoda y auténtica en los cenotes.</p>
-        <a href="https://wa.me/5219996410803" target="_blank" class="btn">Reservar por WhatsApp</a>
+        <a class="btn" href="https://wa.me/5219996410803" target="_blank">Reservar</a>
       </div>
     </div>
-  </div>
 
-  <a href="https://wa.me/5219996410803" target="_blank" class="whatsapp-button" aria-label="Enviar WhatsApp">📲</a>
+    <div class="package-card">
+      <img src="cenote3.jpeg" alt="Paquete Premium">
+      <div class="package-content">
+        <h3>Paquete Premium</h3>
+        <div class="price">$700 MXN por persona</div>
+        <p>
+          Vive una experiencia más completa y sin preocupaciones con nuestro paquete premium, diseñado para que disfrutes al máximo tu recorrido por los cenotes.
+        </p>
+        <ul>
+          <li>Servicio de mototaxi</li>
+          <li>Guía local</li>
+          <li>Chaleco salvavidas incluido</li>
+          <li>Entrada a 3 cenotes</li>
+          <li>Comida típica incluida</li>
+          <li>Bebidas no incluidas</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5219996410803" target="_blank">Reservar</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Cenotes Maya Adventure | Paquetes turísticos en Yucatán</p>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/5219996410803" target="_blank" title="WhatsApp">📲</a>
+
 </body>
 </html>
